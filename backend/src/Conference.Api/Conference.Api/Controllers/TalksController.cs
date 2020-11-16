@@ -12,8 +12,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Conference.Api.Controllers
 {
-    [Route("api/[controller]")]
-    //[Route("api/speakers/{speakerId}/talks")]
+    //[Route("api/[controller]")]
+    [Route("api/speakers/{speakerId}/talks")]
     [ApiController]
     public class TalksController : ControllerBase
     {
