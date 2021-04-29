@@ -12,9 +12,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Conference.Api.Controllers
 {
-    //[Route("api/[controller]")]
     [Route("api/speakers/{speakerId}/talks")]
+   // [Route("api/v{version:apiVersion}/speakers/{speakerId}/talks")]
     [ApiController]
+    [ApiVersion("1.0", Deprecated = true)]
     public class TalksController : ControllerBase
     {
         private readonly ITalkRepository talkRepository;
@@ -31,6 +32,9 @@ namespace Conference.Api.Controllers
         }
 
         [HttpGet(Name = "GetTalksForSpeaker")]
+        //[HttpGet(Name = "GetTalksForSpeaker"), MapToApiVersion("2.0")]
+        //[MapToApiVersion("3.30")]
+        //[MapToApiVersion("4.30")]
         public ActionResult<IEnumerable<TalkV1Dto>> GetTalksForSpeaker(int speakerId)
         {
             if (!speakerRepository.SpeakerExists(speakerId))

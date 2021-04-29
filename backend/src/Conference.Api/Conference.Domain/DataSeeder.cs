@@ -25,7 +25,7 @@ namespace Conference.Domain
 
         private static List<Speaker> LoadSpeakers()
         {
-            var jsonPath = @"C:\SCCM\git\github\conference-main\backend\src\Conference.Api\Conference.Domain\data.json";
+            var jsonPath = @"C:\Users\Irina\source\repos\Conference.Api\Conference.Domain\data.json";
             using (StreamReader file = File.OpenText(jsonPath))
             {
 
